@@ -18,7 +18,6 @@ Firebase je moderní NoSql dazabáze, na struktury používá třídy a ukládá
 
 ## Příklad modelu databáze
 
-    {
   "oauh_knihy" : [ 1, {
     "autor" : "autor",
     "id_knihy" : "id_knihy",

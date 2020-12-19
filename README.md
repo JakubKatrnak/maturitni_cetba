@@ -1,4 +1,5 @@
-# Projekt cetba - flutter
+# Projekt Maturitni cetba - flutter
+### Obchodní akademie, Vyšší odborná škola a Jazyková škola Uherské Hradiště
  
 Jedná se repositář pro skupinový projekt do předmětu PRJ na OAUH.
  

@@ -6,11 +6,11 @@ Jazyk byl vybraný, jelikož se podobá jazyku Java s kterým už máme zkušeno
 
 ## Flutter - framework
 
-Flutter byl vybraný, jelikož obsahuje čistý a přehledný UI model a dokáže zpracovávat kód zároveň na Android tak in na iOS, případně i na web nebo počítač. Také  obsahuje funkci "hot reload", která umožňuje rychlý vývoj.
+Flutter byl vybraný, jelikož obsahuje čistý a přehledný UI model a dokáže zpracovávat kód zároveň na Android tak i na iOS, případně i na web nebo počítač. Také  obsahuje funkci "hot reload", která umožňuje rychlý vývoj.
 
 ## Android Studio - vývojové přostředí
 
-Android Studio umožňuje vytvoření vlastních emulátorů mobilních zařízení, na kterých je možné aplikaci vyvýjet, také obsahuje plnou podporu pro jazyk Dart i framework Flutter. Obsahuje vše co je pro vývoj naší aplikace potřeba. 
+Android Studio umožňuje vytvoření vlastních emulátorů mobilních zařízení, na kterých je možné aplikaci vyvíjet, také obsahuje plnou podporu pro jazyk Dart i framework Flutter. Obsahuje vše co je pro vývoj naší aplikace potřeba. 
 
 ## Firebase - Realtime Database
 

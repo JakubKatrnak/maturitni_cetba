@@ -27,7 +27,6 @@ void changeObdobi()
  }
 
 List obdobi = [
-  'Vyberte období',
   'Světová a česká 18. století',
   'Světová a česká 19. století',
   'Světová 20. a 21. století',

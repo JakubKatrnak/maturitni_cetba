@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
+    return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
@@ -75,6 +75,14 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.all(0.0),
                   child: Container(
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                       borderRadius: BorderRadius.circular(20.0),
                       gradient: LinearGradient(
                         colors: <Color>[
@@ -89,7 +97,7 @@ class _HomeState extends State<Home> {
                       style: TextStyle(fontSize: 17),
                     ),
                   ),
-                  ),
+                ),
               ),
               SizedBox(height: 30.0),
 
@@ -98,8 +106,8 @@ class _HomeState extends State<Home> {
                 height: 50,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      /*side: LinearGradient(
+                    borderRadius: BorderRadius.circular(20),
+                    /*side: LinearGradient(
                         colors: <Color>[
                           Color(0xFF0D47A1),
                           Color(0xFF1976D2),
@@ -117,6 +125,14 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.all(0.0),
                   child: Container(
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                       borderRadius: BorderRadius.circular(20.0),
                       gradient: LinearGradient(
                         colors: <Color>[
@@ -131,7 +147,7 @@ class _HomeState extends State<Home> {
                       style: TextStyle(fontSize: 17),
                     ),
                   ),
-                  ),
+                ),
               ),
 
               SizedBox(height: 30.0),
@@ -141,6 +157,14 @@ class _HomeState extends State<Home> {
                 width: 300,
                 child: Container(
                   decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                     borderRadius: BorderRadius.circular(20.0),
                     gradient: LinearGradient(
                       colors: <Color>[
@@ -153,25 +177,25 @@ class _HomeState extends State<Home> {
                   ),
                   child: Center(
                     child: DropdownButton(
-                     // style: TextStyle(color: Colors.white),
+                      // style: TextStyle(color: Colors.white),
                       hint: Text(' Vyber školu ',
                         style: TextStyle(color: Colors.white),
                       ),
                       icon: Icon(Icons.arrow_circle_down, color: Colors.white,),
                       iconSize: 24,
                       value: _schoolsVal,
-                        onChanged: (value) {
-                          setState(() {
-                            _schoolsVal = value;
-                          });
-                        },
+                      onChanged: (value) {
+                        setState(() {
+                          _schoolsVal = value;
+                        });
+                      },
                       items: _schoolsName.map((value){
                         return DropdownMenuItem(
                           value: value,
                           child: Text(
                             value,
                           ),
-                      );
+                        );
                       }).toList(),
                     ),
                   ),

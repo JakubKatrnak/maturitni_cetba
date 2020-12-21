@@ -18,13 +18,13 @@ Query dbRef = FirebaseDatabase.instance.reference().child("oauh_knihy").orderByK
 
 
 void changeObdobi()
- {
-   dbRef = FirebaseDatabase.instance.reference()
-       .child("oauh_knihy")
-       .orderByChild("id_obdobi")
-       .equalTo(getObdobi);
+{
+  dbRef = FirebaseDatabase.instance.reference()
+      .child("oauh_knihy")
+      .orderByChild("id_obdobi")
+      .equalTo(getObdobi);
 
- }
+}
 
 List obdobi = [
   'Světová a česká 18. století',
@@ -59,35 +59,45 @@ class _BooksListState extends State<BooksList> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Container(
-                    child: Image.network(knihy['prebal'],
-                      height: 150.0,
-                      fit: BoxFit.cover,
+                  Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Container(
+                      child: Image.network(knihy['prebal'],
+                        height: 160.0,
+                        width: 100.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 12.0),
+                  SizedBox(height: 12.0,),
                   Expanded(
-                    child:Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          knihy['nazev_knihy'],
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            color: Colors.white,
+                      child:Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              knihy['nazev_knihy'] + ' ',
+                              style: TextStyle(
+                                fontSize: 24.0,
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6.0),
-                        Text(
-                          ' autor: ' + knihy['autor'],
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.white,
+                          SizedBox(height: 6.0),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              ' autor: ' +  knihy['autor'],
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 6.0),
-                      ],
-                    )
+                          SizedBox(height: 6.0),
+                        ],
+                      )
                   ),
                 ],
               ),
@@ -168,11 +178,11 @@ class _BooksListState extends State<BooksList> {
                           setState(() {
                             obdobiVal = value;
                           });
-                            if(obdobiVal == "Světová a česká 18. století") {getObdobi = "1"; changeObdobi(); Navigator.push(context, MaterialPageRoute(builder: (context) => BooksList()));}
-                            else if(obdobiVal == "Světová a česká 19. století"){getObdobi = "2"; changeObdobi(); Navigator.push(context, MaterialPageRoute(builder: (context) => BooksList()));}
-                            else if(obdobiVal == "Světová 20. a 21. století"){getObdobi = "3"; changeObdobi(); Navigator.push(context, MaterialPageRoute(builder: (context) => BooksList()));}
-                            else if(obdobiVal == "Česká 20. a 21. století"){getObdobi = "4"; changeObdobi(); Navigator.push(context, MaterialPageRoute(builder: (context) => BooksList()));}
-                            },
+                          if(obdobiVal == "Světová a česká 18. století") {getObdobi = "1"; changeObdobi(); Future.delayed(const Duration(milliseconds: 5000)); Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BooksList()));}
+                          else if(obdobiVal == "Světová a česká 19. století"){getObdobi = "2"; changeObdobi(); Future.delayed(const Duration(milliseconds: 5000)); Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BooksList()));}
+                          else if(obdobiVal == "Světová 20. a 21. století"){getObdobi = "3"; changeObdobi(); Future.delayed(const Duration(milliseconds: 5000)); Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BooksList()));}
+                          else if(obdobiVal == "Česká 20. a 21. století"){getObdobi = "4"; changeObdobi(); Future.delayed(const Duration(milliseconds: 5000)); Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BooksList()));}
+                        },
                         items: obdobi.map((value){
                           return DropdownMenuItem(
                             value: value,
@@ -195,11 +205,11 @@ class _BooksListState extends State<BooksList> {
                 itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double>animation, int){
                   Map knihy = snapshot.value;
                   return _buildBookItem(knihy: knihy);
-                  }
+                }
             )
           ],
-          ),
         ),
-      );
+      ),
+    );
   }
 }

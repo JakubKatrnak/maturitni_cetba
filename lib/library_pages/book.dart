@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../quote.dart';
 
@@ -31,70 +32,92 @@ class _BookState extends State<Book> {
   @override
   Widget build(BuildContext context) {
     getBook();
-      return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: PreferredSize(
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
-           child: AppBar(
-            title: Text(widget.bookName),
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-              flexibleSpace: ClipPath(
-              clipper: MyCustomClipperForAppBar(),
-              child: Container(
-                decoration: BoxDecoration(
-                   gradient: LinearGradient(
-                    colors: [
-                      Color(0xFF0D47A1),
-                      Color(0xFF1976D2),
-                      Color(0xFF42A5F5),
-                    ],
-                  ),
+        child: AppBar(
+          title: Text(widget.bookName),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          flexibleSpace: ClipPath(
+            clipper: MyCustomClipperForAppBar(),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFF0D47A1),
+                    Color(0xFF1976D2),
+                    Color(0xFF42A5F5),
+                  ],
                 ),
               ),
-             ),
-           ),
-        ),
-
-
-        body: FirebaseAnimatedList(
-           query: bookRef,
-           itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double>animation, int){
-             Map kniha = snapshot.value;
-             return _buildBookItem(kniha: kniha);
-             },
+            ),
           ),
+        ),
+      ),
+
+
+      body: FirebaseAnimatedList(
+        query: bookRef,
+        itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double>animation, int){
+          Map kniha = snapshot.value;
+          return _buildBookItem(kniha: kniha);
+        },
+      ),
     );
   }
 
 
   Widget _buildBookItem({Map kniha}){
-      double cWidth = MediaQuery.of(context).size.width*0.8;
-      return Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/background_book.jpg'),
-            fit: BoxFit.cover,
-          ),
+    double cWidth = MediaQuery.of(context).size.width*0.8;
+    return Container(
+      constraints: BoxConstraints(
+        minHeight: 900,
+        minWidth: 400,
+      ),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/background_book.jpg'),
+          fit: BoxFit.cover,
         ),
-        child: ListView(
-          shrinkWrap: true,
-          physics: ScrollPhysics(),
-          scrollDirection: Axis.vertical,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-             child: Container(
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      child: Image.network(kniha['prebal'],
-                        height: 300,
-                      ),
+      ),
+      child: ListView(
+        shrinkWrap: true,
+        physics: ScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    child: Image.network(kniha['prebal'],
+                      height: 300,
+                      width: 170,
                     ),
-                    SizedBox(width: 12.0),
-                    Expanded(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 12.0),
+                  Expanded(
                     child:Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -174,40 +197,40 @@ class _BookState extends State<Book> {
                         ),
                       ],
                     ),
-                    ),
-                      ],
-                ),
+                  ),
+                ],
               ),
             ),
-            Container(
-              width: cWidth,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    Text(
-                      'Stručný popis:',
+          ),
+          Container(
+            width: cWidth,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Text(
+                    'Popis:',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22.0,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Container(
+                    child: Text(
+                      kniha['popis'],
+                      textAlign: TextAlign.left,
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22.0,
+                          fontSize: 16.0
                       ),
                     ),
-                    SizedBox(height: 10.0),
-                    Container(
-                      child: Text(
-                        kniha['popis'],
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontSize: 16.0
-                          ),
-                        ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }

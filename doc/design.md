@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Návrhová dokumentace
 
 ## Dart - jazyk
@@ -30,7 +29,9 @@ Firebase je moderní NoSql dazabáze, na struktury používá třídy a ukládá
     "rok_vydani" : "rok_vydani",
     "zanr" : "zanr"
   }
-=======
+
+-----------------------------------------------------
+
 # Popis návrhových rozhodnutí
 
 jaký programovací jazyk/framework/... jsme použili a proč?

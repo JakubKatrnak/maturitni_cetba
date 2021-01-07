@@ -1,17 +1,14 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projekt_prj/dairy_pages/soon.dart';
 import 'package:projekt_prj/quote.dart';
 import 'library.dart';
 
-
 class Home extends StatefulWidget {
 
   @override
   _HomeState createState() => _HomeState();
 }
-
 
 class _HomeState extends State<Home> {
 

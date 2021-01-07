@@ -4,22 +4,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../quote.dart';
 
-class Book extends StatefulWidget {
+class Book extends StatefulWidget
+  {
 
-  final String bookName;
-  final String bookId;
+    final String bookName;
+    final String bookId;
 
-  const Book({Key key, this.bookId, this.bookName}) : super(key: key);
+    const Book({Key key, this.bookId, this.bookName}) : super(key: key);
 
-  @override
-  _BookState createState() => _BookState();
-}
+    @override
+    _BookState createState() => _BookState();
+  }
 
 class _BookState extends State<Book> {
 
   Query bookRef;
-
-
   void getBook()
   {
     bookRef = FirebaseDatabase.instance.reference()
@@ -27,7 +26,6 @@ class _BookState extends State<Book> {
         .orderByKey()
         .equalTo(widget.bookId);
   }
-
 
   @override
   Widget build(BuildContext context) {

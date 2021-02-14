@@ -7,6 +7,14 @@ Jedná se repositář pro skupinový projekt do předmětu PRJ na OAUH.
 
 - [Jakub Katňák](https://github.com/JakubKatrnak)
 - [Dominik Borek](https://github.com/Hellman666)
+- [Ondřej Hruboš](https://github.com/hruboson)
+
+### Zadání projektu pro 2. pololetí:
+- vytvoření webové stránky, pro jednodušší vkládání knížek do databáze, ze které se následně vypíší rovnou do aplikace díky použití real-time databáze
+- vytvoření deníku, pro zapisovaní poznámek ohledně knih a následné exportování tohoto deníku do .docx souboru
+- vylepšení knihovny pro lepší orientaci a výběr knih
+- rozšíření databáze, aby byla aplikace pro studenty z více škol
+- automatické doporučování knížek podle uživatelových aktuálních oblíbených knih
 
 ### Popis práce: 
 <p>

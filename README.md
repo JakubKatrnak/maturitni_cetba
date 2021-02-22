@@ -30,7 +30,7 @@ Projekt bude obsahovat dohromady 8 různých obrazovek aplikace, kdy po spuště
 ### Dokumentace:
 - [Uživatelská dokumentace](../master/doc/uzivatelska_dokumentace.pdf)
 - [Návrhová dokumentace](../master/doc/design.md)
-- [Wireframe](../master/doc/wireframe.png)
+- [Wireframe](../main/doc/mobile%20wireframe.png)
 - [User-case](../master/doc/diagram.png)
 - [Class diagram](../master/doc/diagram_trid.png)
 - [Plán postupu](../master/doc/plan.md)

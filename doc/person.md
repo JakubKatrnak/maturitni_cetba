@@ -1,0 +1,7 @@
+|                                              | EVA                                                                                | ADAM                                                                      |
+| :------------------------------------------- | :--------------------------------------------------------------------------------: | :-----------------------------------------------------------------------: |
+| věk                                          | 18 let                                                                             | 17 let                                                                    |
+| povolání                                     | student gymnázia                                                                   | student IT                                                                |
+| momentální volba zápisu maturitní četby      | sepisování četby na papír                                                          | poznámky zapsané elektronicky                                             |
+| předchozí zkušenosti s technikou             | bezproblémové ovládání různých sociálních aplikací                                 | obecně s osobní technikou zručný                                          |
+| proč by aplikaci používal/a                  | chtěla by mít své poznámky vždy po ruce a kdykoliv být schopná vytvářet poznámky   | chtěl by pomoc při výběru četby a zpřehlednit své poznámky na počítači    |

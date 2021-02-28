@@ -28,7 +28,7 @@ Uživatel se musí příhlásit na svůj účet. V knihovně budou zapsané zák
 
 #### Webová stránky:
 <p>
-Webové stránky budou fungovat velice podobně jako aplikace, smyslem je uživatelům nabídnout používat služby aplikace i na webu, web a apliace budou vzájemně propojeny pomocí účtů, který si uživatel vytvoří. Webové stránky nabídnou možnost procházet maturitní četbu uživatelovi školy, základní informace o jednotlivých knihách formou knihovny, možnost si vybrat oblíbenou četbu a případně si o ní vypsat vlastní poznámky formou deníku a web bude uživateli doporučovat knihy podle již vybraných žánrů, autorů, atd... 
+Webové stránky budou fungovat velice podobně jako aplikace, smyslem je uživatelům nabídnout používat služby aplikace i na webu, web a aplikace budou vzájemně propojeny pomocí účtů, který si uživatel vytvoří. Webové stránky nabídnou možnost procházet maturitní četbu uživatelovi školy, základní informace o jednotlivých knihách formou knihovny, možnost si vybrat oblíbenou četbu a případně si o ní vypsat vlastní poznámky formou deníku a web bude uživateli doporučovat knihy podle již vybraných žánrů, autorů, atd... 
 </p>
 
 ### Dokumentace:
@@ -38,4 +38,4 @@ Webové stránky budou fungovat velice podobně jako aplikace, smyslem je uživa
 - [User-case](../main/doc/diagram.png)
 - [Class diagram](../main/doc/diagram_trid.png)
 - [Plán postupu](../main/doc/plan.md)
-- [Uživatelksé role](../main/doc/person.md)
+- [Uživatelské role](../main/doc/person.md)

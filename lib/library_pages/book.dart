@@ -2,6 +2,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import '../loading.dart';
 import '../quote.dart';
 
 class Book extends StatefulWidget
@@ -57,16 +59,17 @@ class _BookState extends State<Book> {
       ),
 
 
-      body: FirebaseAnimatedList(
-        query: bookRef,
-        itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double>animation, int){
-          Map kniha = snapshot.value;
-          return _buildBookItem(kniha: kniha);
-        },
+      body: Container(
+        child: FirebaseAnimatedList(
+            query: bookRef,
+            itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double>animation, int){
+              Map kniha = snapshot.value;
+              return _buildBookItem(kniha: kniha);
+            },
+          ),
       ),
     );
   }
-
 
   Widget _buildBookItem({Map kniha}){
     double cWidth = MediaQuery.of(context).size.width*0.8;

@@ -4,6 +4,7 @@ import 'package:projekt_prj/library_pages/home.dart';
 import 'package:projekt_prj/login/registration.dart';
 import '../quote.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -55,25 +56,9 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 10.0),
                   LoginButton(),
                   SizedBox(height: 15.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: size.width*0.45,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: RegisterButton(),
-                        )
-                      ),
-                      Container(
-                        width: size.width*0.45,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ForgotPass(),
-                        )
-                      ),
-                    ],
-                  ),
+                  RegisterButton(),
+                  SizedBox(height: 15.0,),
+                  ForgotPass(),
                 ],
               ),
             ),
@@ -134,12 +119,13 @@ class LoginBox extends StatelessWidget {
 class LoginButton extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           SizedBox(
-            width: 350.0,
+            width: size.width*0.8,
             child: RaisedButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(350.0)),
               onPressed: () async {
@@ -151,7 +137,7 @@ class LoginButton extends StatelessWidget{
               textColor: Colors.white,
               padding: const EdgeInsets.all(0.0),
               child: Container(
-                width: 350,
+                width: size.width*0.8,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   gradient: LinearGradient(
@@ -176,33 +162,37 @@ class LoginButton extends StatelessWidget{
 class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          RaisedButton(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
-            onPressed: () async {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => Registration()),
-              );
-            },
-            textColor: Colors.white,
-            padding: const EdgeInsets.all(0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                gradient: LinearGradient(
-                  colors: <Color>[
-                    Color(0xFF0D47A1),
-                    Color(0xFF1976D2),
-                    Color(0xFF42A5F5),
-                  ],
+          SizedBox(
+            width: size.width*0.8,
+            child: RaisedButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+              onPressed: () async {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Registration()),
+                );
+              },
+              textColor: Colors.white,
+              padding: const EdgeInsets.all(0.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  gradient: LinearGradient(
+                    colors: <Color>[
+                      Color(0xFF0D47A1),
+                      Color(0xFF1976D2),
+                      Color(0xFF42A5F5),
+                    ],
+                  ),
                 ),
+                padding: const EdgeInsets.all(12.0),
+                child: Center(child: const Text('Registrovat se', textAlign: TextAlign.center, style: TextStyle(fontSize: 22))),
               ),
-              padding: const EdgeInsets.all(12.0),
-              child: Center(child: const Text('Registrovat se', textAlign: TextAlign.center, style: TextStyle(fontSize: 22))),
             ),
           ),
         ],
@@ -214,34 +204,17 @@ class RegisterButton extends StatelessWidget {
 class ForgotPass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          RaisedButton(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
-            onPressed: () {},
-            textColor: Colors.white,
-            padding: const EdgeInsets.all(0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                gradient: LinearGradient(
-                  colors: <Color>[
-                    Color(0xFF0D47A1),
-                    Color(0xFF1976D2),
-                    Color(0xFF42A5F5),
-                  ],
-                ),
-              ),
-              padding: const EdgeInsets.all(12.0),
-              child: Center(child: const Text('Zapomenuté heslo', textAlign: TextAlign.center, style: TextStyle(fontSize: 22))),
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        GestureDetector(
+          onTap: null,
+          child: Text(
+            "Zapomenuté heslo",
+            style: TextStyle(color: Colors.blue, fontSize: 16.0),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
-
-
